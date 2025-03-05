@@ -1,14 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleNavbar = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
-    <nav
-      className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top"
-      id="mainNav"
-    >
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div className="container px-4">
-        {/* Updated: Link the brand to the home page */}
         <Link className="navbar-brand" to="/">
           What's My Macros?
         </Link>
@@ -17,35 +19,49 @@ const Navbar = () => {
         <button
           className="navbar-toggler"
           type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarResponsive"
-          aria-controls="navbarResponsive"
-          aria-expanded="false"
+          onClick={toggleNavbar} // Use React's state instead of Bootstrap's data attributes
+          aria-expanded={isOpen ? "true" : "false"}
           aria-label="Toggle navigation"
         >
           <span className="navbar-toggler-icon"></span>
         </button>
 
         {/* Navbar Links */}
-        <div className="collapse navbar-collapse" id="navbarResponsive">
+        <div className={`collapse navbar-collapse ${isOpen ? "show" : ""}`}>
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
-              <Link className="nav-link" to="/">
+              <Link
+                className="nav-link"
+                to="/"
+                onClick={() => setIsOpen(false)}
+              >
                 Home
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/about">
+              <Link
+                className="nav-link"
+                to="/about"
+                onClick={() => setIsOpen(false)}
+              >
                 About
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/calculator">
+              <Link
+                className="nav-link"
+                to="/calculator"
+                onClick={() => setIsOpen(false)}
+              >
                 Calculator
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/contact">
+              <Link
+                className="nav-link"
+                to="/contact"
+                onClick={() => setIsOpen(false)}
+              >
                 Contact
               </Link>
             </li>
