@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Form, Button, Col, Row, Alert } from "react-bootstrap";
+import { logEvent } from "../analytics"; // Import event tracking function
 
 const Calculator = () => {
   const [formData, setFormData] = useState({
@@ -49,6 +50,9 @@ const Calculator = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // Log event when "Calculate" button is clicked
+    logEvent("Form", "Calculate Button Clicked", "Calculator Form");
 
     // Destructure form data
     const {
@@ -168,93 +172,6 @@ const Calculator = () => {
               type="number"
               name="height"
               value={formData.height}
-              onChange={handleChange}
-              required
-            />
-          </Col>
-        </Row>
-
-        <Row className="mb-3">
-          <Col>
-            <Form.Label>How would you describe your activity level?</Form.Label>
-            <Form.Control
-              as="select"
-              name="activityLevel1"
-              value={formData.activityLevel1}
-              onChange={handleChange}
-              required
-            >
-              <option value="">Select...</option>
-              <option>Sedentary</option>
-              <option>Lightly Active</option>
-              <option>Moderately Active</option>
-              <option>Very Active</option>
-              <option>Extremely Active</option>
-            </Form.Control>
-          </Col>
-        </Row>
-
-        <Row className="mb-3">
-          <Col>
-            <Form.Label>What is your body fat percentage?</Form.Label>
-            <Form.Control
-              as="select"
-              name="bodyFat"
-              value={formData.bodyFat}
-              onChange={handleChange}
-              required
-            >
-              <option value="">Select...</option>
-              <option>10% - 14%</option>
-              <option>15% - 20%</option>
-              <option>21% - 28%</option>
-              <option>over 28%</option>
-            </Form.Control>
-          </Col>
-        </Row>
-
-        <Row className="mb-3">
-          <Col>
-            <Form.Label>
-              How would you describe your activity at work?
-            </Form.Label>
-            <Form.Control
-              as="select"
-              name="activityLevel2"
-              value={formData.activityLevel2}
-              onChange={handleChange}
-              required
-            >
-              <option value="">Select...</option>
-              <option>Very light</option>
-              <option>Light</option>
-              <option>Moderate</option>
-              <option>Heavy</option>
-              <option>Very heavy</option>
-            </Form.Control>
-          </Col>
-        </Row>
-
-        <Row className="mb-3">
-          <Col>
-            <Form.Label>
-              Are you aiming to lose weight or gain muscle?
-            </Form.Label>
-            <Form.Check
-              inline
-              type="radio"
-              label="Lose weight"
-              name="goal"
-              value="Lose weight"
-              onChange={handleChange}
-              required
-            />
-            <Form.Check
-              inline
-              type="radio"
-              label="Gain muscle"
-              name="goal"
-              value="Gain muscle"
               onChange={handleChange}
               required
             />
