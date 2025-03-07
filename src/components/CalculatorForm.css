@@ -1,0 +1,45 @@
+.calculator-form {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #f8f9fa;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.calculator-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.calculator-form .form-group {
+  margin-bottom: 15px;
+}
+
+.calculator-form .form-control {
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.calculator-form .btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  background-color: #007bff;
+  border-radius: 8px;
+  border: none;
+}
+
+.calculator-form .btn:hover {
+  background-color: #0056b3;
+}
+
+.calculator-form ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.calculator-form ul li {
+  font-size: 16px;
+}

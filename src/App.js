@@ -7,6 +7,8 @@ import Calculator from "./pages/Calculator";
 import Navbar from "./components/NavBar";
 import Layout from "./components/Layout";
 import { initGA, logPageView } from "./analytics"; // Import Google Analytics functions
+import "bootstrap/dist/css/bootstrap.min.css";
+
 
 const App = () => {
   return (
