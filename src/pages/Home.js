@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Row, Col, Button, Card } from "react-bootstrap";
 import { Helmet } from "react-helmet";
+import MacrosLogo from './MacrosLogo.png'; // Adjust the path if necessary
 
 const Home = () => {
   return (
@@ -51,7 +52,7 @@ const Home = () => {
             </Col>
             <Col md={6}>
               <img
-                src="https://via.placeholder.com/500"
+                src={MacrosLogo}
                 alt="Macronutrients"
                 className="img-fluid"
               />
