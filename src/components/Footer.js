@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => (
   <footer
-    className="bg-primary"
+    className="bg-secondary"
     style={{
       textAlign: "center",
       padding: "0.5rem 0", // Reduced padding for smaller height

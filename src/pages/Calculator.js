@@ -4,7 +4,7 @@ const Calculator = () => {
 
   return (
     <div>
-      <h1>Macro Calculator</h1>
+      
 
       <CalculatorForm/>
     </div>
